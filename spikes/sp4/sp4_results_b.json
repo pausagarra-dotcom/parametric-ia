@@ -1,0 +1,16 @@
+{
+ "k25_tol0.01_relieve": {
+  "contornos": 625,
+  "ok": 625,
+  "fallos": {},
+  "validos": 625,
+  "solidos": 625,
+  "tiempo_total_s": 70.38,
+  "tiempo_medio_ms": 86.5,
+  "volumen_mm3": 13254.7,
+  "volumen_esperado_aprox_mm3": 13741.3,
+  "r_mm": 2.16,
+  "profundidad_mm": 1.5,
+  "tol": 0.01
+ }
+}

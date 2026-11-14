@@ -1,0 +1,50 @@
+{
+ "organica_A25_W40": {
+  "uv_arc_area_max": 0.0647,
+  "length_max": 0.0484,
+  "angle_max": 0.0409,
+  "cov": 1.0
+ },
+ "organica_A25_W60": {
+  "uv_arc_area_max": 0.1093,
+  "length_max": 0.0839,
+  "angle_max": 0.0417,
+  "cov": 1.0
+ },
+ "organica_A25_W80": {
+  "uv_arc_area_max": 0.1447,
+  "length_max": 0.1139,
+  "angle_max": 0.0416,
+  "cov": 1.0
+ },
+ "organica_A25_W100": {
+  "uv_arc_area_max": 0.1617,
+  "length_max": 0.1298,
+  "angle_max": 0.0412,
+  "cov": 1.0
+ },
+ "organica_A40_W40": {
+  "uv_arc_area_max": 0.128,
+  "length_max": 0.0907,
+  "angle_max": 0.0947,
+  "cov": 1.0
+ },
+ "organica_A40_W60": {
+  "uv_arc_area_max": 0.2136,
+  "length_max": 0.1586,
+  "angle_max": 0.0969,
+  "cov": 1.0
+ },
+ "organica_A40_W80": {
+  "uv_arc_area_max": 0.2843,
+  "length_max": 0.2187,
+  "angle_max": 0.097,
+  "cov": 1.0
+ },
+ "organica_A40_W100": {
+  "uv_arc_area_max": 0.3215,
+  "length_max": 0.2551,
+  "angle_max": 0.0965,
+  "cov": 1.0
+ }
+}
