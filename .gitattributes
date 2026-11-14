@@ -1,0 +1,7 @@
+# Fitxers CAD: git no ha de canviar mai els salts de línia (podria fer-los illegibles)
+*.x_t -text
+*.X_T -text
+*.step -text
+*.STEP -text
+*.stp -text
+*.STP -text
