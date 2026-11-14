@@ -17,7 +17,7 @@ Llegenda: **[H]** fet verificat · **[S]** suposició · **[O]** opinió · **[?
    - els projectes es guarden a part.
 7. **Presentació:** materials i mapes d'anàlisi (curvatura, zebra). Per defecte: fons blanc, material blanc mat, ombres suaus, estil minimalista.
 8. **Fabricació:** indicar el procés (p. ex. injecció amb línia de partició, direcció de desmotllament i angle). L'app avisa i ajuda a modificar la textura perquè es pugui fabricar. **Mai bloqueja.**
-9. **Sortida, per etapes:** primer la superfície texturada → després el sòlid texturat → més endavant totes les peces en un sol STEP.
+9. **Sortida en Parasolid (`.x_t`)**, decidit després del SP-6, per etapes: primer la superfície texturada → després el sòlid texturat → més endavant totes les peces en un sol STEP.
 
 ## 2. Arquitectura proposada [O]
 
@@ -73,6 +73,7 @@ Ordre: **SP-5 i SP-6 primer**, perquè la sortida a SolidWorks és el risc més 
 | **SP-9 · Xat local** | El backend parla amb Claude Code sense obrir el terminal, amb les accions MCP de l'app. S'hi envien una captura i un STEP | Claude rep la imatge i el fitxer i crida una acció que canvia un slider. **Abans, comprovar les condicions d'ús** d'aquest mode amb el compte personal [?] |
 
 **Estat (2026-11-14):** SP-5 fet ([informe](recerca/sp5/informe.md)). El STEP conserva les particions, el color de cara i els mm. Rhino 9 **no importa** `.x_t`, però sí que l'**exporta**: al SP-6 es prova també com a format de sortida.
+SP-6, primera part, feta ([informe](recerca/sp6/informe.md)). Amb el camí (b), una superfície per punts, el sòlid queda tancat i vàlid, però el fitxer pesa massa: 25 MB en STEP i 18,5 MB en `.x_t` per a una zona de 33 × 86 mm, amb una desviació màxima de 0,015 mm. **Decisió (Pau, 2026-11-14): la sortida és Parasolid (`.x_t`)**: SW2020 l'obre, mentre que el STEP no l'acaba d'importar. El format queda resolt. El que falta és la **qualitat de la geometria**: la superfície del camí (b) no és estètica (falques al contorn, ondulacions). El camí (a), NURBS net per quadrat amb el tauler ajustat a la zona, passa a la fase 2 com a manera estàndard de generar la sortida.
 
 Porta 1: un informe per spike a `APP/recerca/spN/informe.md` i la decisió de què entra a l'MVP.
 

@@ -5,3 +5,8 @@ __pycache__/
 .venv/
 .claude/settings.local.json
 *.gdoc
+
+# Geometria de prova pesada dels spikes de l'APP (es queda a Drive, no a git)
+APP/recerca/sp6/*.stp
+APP/recerca/sp6/*.x_t
+APP/recerca/sp6/*.3dm

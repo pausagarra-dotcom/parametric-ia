@@ -31,6 +31,8 @@ Mètode: importació en un document de Rhino 9 sense interfície (`RhinoDoc.Crea
   - La llista de connectors instal·lats té **«Parasolid Export»**, però cap «Parasolid Import».
 - En canvi, hi ha **«Solidworks Import»**: [S] Rhino pot llegir directament fitxers natius de SolidWorks (`.SLDPRT`). Falta provar si conserva els colors i les particions.
 
+> **Correcció (SP-6):** la cara 2 no és una franja al voltant del cilindre, sinó una zona retallada a la part de dalt, de 32,8 × 85,6 mm desplegada (y entre 16 i 101). Les cares 0 i 1 són les dues meitats del cilindre, retallades al voltant d'aquesta zona. Les àrees de la taula són correctes; la interpretació de les mides no ho era.
+
 ## Conclusions
 1. **El STEP és suficient com a format d'entrada:** conserva les particions, el color de cara i les unitats. Respon a la preocupació de la pregunta B1 (mantenir particions).
 2. **El Parasolid no serveix com a entrada amb Rhino 9.** Alternativa: el `.SLDPRT` natiu, si es vol estalviar l'exportació (cal provar-ho).
