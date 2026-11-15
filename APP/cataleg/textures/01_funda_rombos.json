@@ -1,0 +1,27 @@
+{
+  "tipus": "textura",
+  "id": "01_funda_rombos",
+  "nom": "Funda de rombes",
+  "data": "2026-11-11",
+  "carpeta": "textures/01_funda_rombos",
+  "descripcio": "Rombes enfonsats que s'esvaeixen cap a la vora de la zona texturada. Dues variants: funda de mòbil i cilindre.",
+  "referencies": ["textures/01_funda_rombos/referencia/test_01.JPG"],
+  "definicio": "textures/01_funda_rombos/grasshopper/funda_rombos.gh",
+  "formula": null,
+  "sortida_actual": "malla",
+  "sliders": [
+    {"nom": "CELL_W", "unitat": "mm", "defecte": 6.063, "min": null, "max": null, "explicacio": "Diagonal horitzontal del rombe (funda; 5,52 al cilindre, mesurat a la foto)"},
+    {"nom": "CELL_H", "unitat": "mm", "defecte": 9.11, "min": null, "max": null, "explicacio": "Diagonal vertical del rombe"},
+    {"nom": "DEPTH", "unitat": "mm", "defecte": 0.5, "min": null, "max": null, "explicacio": "Profunditat del rombe"},
+    {"nom": "FADE_IN", "unitat": "mm", "defecte": null, "min": null, "max": null, "explicacio": "Esvaïment cap a la vora de la zona"},
+    {"nom": "DETAIL", "unitat": "mm", "defecte": null, "min": null, "max": null, "explicacio": "Densitat de la malla"}
+  ],
+  "etiquetes": {"tipus_geometria": ["closca", "cilindre"], "tipus_producte": ["funda de mòbil"], "material": ["plàstic"], "acabat": ["mat"], "estil": ["geomètric"], "projecte": []},
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""},
+  "notes": [
+    "Lliurada. Estat «pendent» fins que Pau l'aprovi passada a sòlid (F1).",
+    "El .gh llegeix el codi de fitxers externs i, des de la reorganització, els busca a la ruta antiga: dona error en obrir-lo (pendent de reparar; vegeu el README de la textura).",
+    "Llista de sliders resumida: falten els TX_*, FADE_N i FADE_MODE."
+  ]
+}

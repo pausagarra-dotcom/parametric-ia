@@ -1,0 +1,26 @@
+{
+  "tipus": "solucio",
+  "id": "S002_organica_arap_regional",
+  "nom": "Desplegament ARAP de la zona a texturar sobre una superfície orgànica",
+  "data": "2026-11-15",
+  "textures": [],
+  "geometria": {"tipus": "organica", "condicions": "Superfície NURBS de doble corbatura. Desplegar només la zona a texturar, no tota la cara. Provat amb relleus de 10, 25 i 40 mm sobre 200 mm i zones de 40–100 mm."},
+  "mapeig": "arap_regional",
+  "sortida": "malla",
+  "codi": ["APP/recerca/sp7/sp7_unwrap.py", "APP/recerca/sp8/sp8_arap_scipy.py"],
+  "resultats": {
+    "distorsio_area_max": {"A25_100mm": {"uv_arc": 0.162, "arap": 0.050}, "A40_100mm": {"uv_arc": 0.321, "arap": 0.122}},
+    "temps_scipy_s": 1.13,
+    "triangles_girats": 0
+  },
+  "problemes_i_solucions": [
+    {"problema": "Desplegar tota la superfície comprimeix el centre de manera uniforme.", "solucio": "Desplegar només la zona que es texturitza."},
+    {"problema": "L'UV de la NURBS no és proporcional a la longitud (56 % d'error).", "solucio": "No fer servir mai l'UV directe; uv_arc com a mínim, ARAP per a l'orgànica."},
+    {"problema": "El LSCM del SP-7 té un error de formulació (resultat degenerat amb solver exacte).", "solucio": "Fer servir ARAP; arreglar el LSCM abans d'usar-lo com a punt de partida a l'app."},
+    {"problema": "Amb numpy pur el desplegament triga minuts.", "solucio": "scipy amb la factorització feta un sol cop: 1,1 s."}
+  ],
+  "captures": ["APP/recerca/sp7/quadricula_A25_W100_persp.png", "APP/recerca/sp7/mapa_regional_A25_W100_arap.png"],
+  "font": ["recerca/sp1/informe.md", "APP/recerca/sp7/informe.md", "APP/recerca/sp8/informe.md"],
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""}
+}

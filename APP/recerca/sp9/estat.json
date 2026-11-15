@@ -1,0 +1,17 @@
+{
+ "textura": "02_placa_quadres",
+ "params": {
+  "CELL": 8.0,
+  "DEPTH": 0.3,
+  "TILT": 0.8,
+  "LIP": 0.3
+ },
+ "historial": [
+  {
+   "nom": "DEPTH",
+   "abans": 0.4,
+   "despres": 0.3,
+   "motiu": "Usuari diu que els quadrats es veuen massa profunds; reduir profunditat un 25%"
+  }
+ ]
+}

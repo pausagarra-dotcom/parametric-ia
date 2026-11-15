@@ -1,0 +1,34 @@
+{
+  "tipus": "textura",
+  "id": "03_organica_quadres",
+  "nom": "Quadrats sobre superfície orgànica",
+  "data": "2026-11-14",
+  "carpeta": "textures/03_organica_quadres",
+  "descripcio": "El mateix patró de la 02 aplicat sobre una NURBS orgànica de 200 × 200 mm; la fórmula es veu al llenç com a nodes Evaluate.",
+  "referencies": ["textures/02_placa_quadres/referencia/test_02.jpg", "textures/02_placa_quadres/referencia/test_02_detail.JPG"],
+  "definicio": "textures/03_organica_quadres/grasshopper/superficie_organica_quadres.gh",
+  "formula": "textures/03_organica_quadres/formula_patro.md",
+  "sortida_actual": "malla",
+  "sliders": [
+    {"nom": "CELL", "unitat": "mm", "defecte": 8.0, "min": null, "max": null, "explicacio": "Costat de la cel·la"},
+    {"nom": "GAP", "unitat": "mm", "defecte": 0.2, "min": null, "max": null, "explicacio": "Marge pla al voltant de cada quadrat"},
+    {"nom": "CORNER_R", "unitat": "mm", "defecte": 1.2, "min": null, "max": null, "explicacio": "Radi de les cantonades"},
+    {"nom": "WALL", "unitat": "mm", "defecte": 0.2, "min": null, "max": null, "explicacio": "Ample de l'aresta"},
+    {"nom": "DEPTH", "unitat": "mm", "defecte": 0.4, "min": null, "max": null, "explicacio": "Profunditat màxima (negatiu = relleu)"},
+    {"nom": "TILT", "unitat": "", "defecte": 0.8, "min": null, "max": null, "explicacio": "Inclinació del fons"},
+    {"nom": "LIP", "unitat": "", "defecte": 0.3, "min": null, "max": null, "explicacio": "Força de l'aresta marcada"},
+    {"nom": "ROT", "unitat": "index", "defecte": 0, "min": 0, "max": 3, "explicacio": "Gira 90° quines cantonades són les marcades"},
+    {"nom": "OFF_X", "unitat": "mm", "defecte": 0, "min": null, "max": null, "explicacio": "Desplaça el tauler en X"},
+    {"nom": "OFF_Y", "unitat": "mm", "defecte": 0, "min": null, "max": null, "explicacio": "Desplaça el tauler en Y"},
+    {"nom": "FADE_GAP", "unitat": "mm", "defecte": 10, "min": null, "max": null, "explicacio": "On comença l'esvaïment cap a la vora"},
+    {"nom": "FADE_LEN", "unitat": "mm", "defecte": 30, "min": null, "max": null, "explicacio": "Llargada de l'esvaïment"},
+    {"nom": "STEP", "unitat": "mm", "defecte": 2, "min": null, "max": 4, "explicacio": "Densitat de la malla"}
+  ],
+  "etiquetes": {"tipus_geometria": ["organica"], "tipus_producte": [], "material": ["plàstic"], "acabat": ["mat"], "estil": ["geomètric", "tàctil"], "projecte": []},
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""},
+  "notes": [
+    "Lliurada. Estat «pendent» fins que Pau l'aprovi passada a sòlid (F1).",
+    "SP-8 (2026-11-15): el .gh conté ara també una «Placa quadres» al costat (+260 mm) que fa que cada canvi de slider trigui ~3 s; no és d'aquesta sessió."
+  ]
+}

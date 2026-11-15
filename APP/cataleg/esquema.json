@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "app-textures/cataleg/esquema.json",
+  "title": "Catàleg de l'app de textures",
+  "description": "Tres tipus de fitxa: textura (congelada), solució d'aplicació (el que creix) i projecte (a part, no es comparteix). Cada fitxa és un fitxer JSON.",
+  "$defs": {
+    "estat": {
+      "description": "pendent = encara no aprovada per Pau; aprovada = validada en digital (passada a sòlid i vista bé); descartada = no s'ha de reutilitzar",
+      "enum": ["pendent", "aprovada", "descartada"]
+    },
+    "validacio_fisica": {
+      "type": "object",
+      "description": "Casella de validació física amb impressió 3D (F1)",
+      "properties": {
+        "feta": {"type": "boolean"},
+        "tecnologia": {"enum": ["SLA", "FDM", null]},
+        "data": {"type": ["string", "null"]},
+        "notes": {"type": "string"}
+      },
+      "required": ["feta"],
+      "additionalProperties": false
+    },
+    "etiquetes": {
+      "type": "object",
+      "description": "Categories de cerca (E1)",
+      "properties": {
+        "tipus_geometria": {"type": "array", "items": {"enum": ["pla", "cilindre", "con", "esfera", "revolucio", "organica", "placa_cantell_arrodonit", "closca"]}},
+        "tipus_producte": {"type": "array", "items": {"type": "string"}},
+        "material": {"type": "array", "items": {"type": "string"}},
+        "acabat": {"type": "array", "items": {"type": "string"}},
+        "estil": {"type": "array", "items": {"type": "string"}},
+        "projecte": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "slider": {
+      "type": "object",
+      "properties": {
+        "nom": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$"},
+        "unitat": {"enum": ["mm", "graus", "", "index"]},
+        "defecte": {"type": ["number", "null"]},
+        "min": {"type": ["number", "null"]},
+        "max": {"type": ["number", "null"]},
+        "explicacio": {"type": "string"}
+      },
+      "required": ["nom", "unitat", "explicacio"],
+      "additionalProperties": false
+    },
+    "textura": {
+      "type": "object",
+      "properties": {
+        "tipus": {"const": "textura"},
+        "id": {"type": "string", "pattern": "^[0-9]{2}_[a-z0-9_]+$"},
+        "nom": {"type": "string"},
+        "data": {"type": "string"},
+        "carpeta": {"type": "string", "description": "Ruta relativa a l'arrel del repositori; la carpeta no es modifica mai"},
+        "descripcio": {"type": "string"},
+        "referencies": {"type": "array", "items": {"type": "string"}},
+        "definicio": {"type": "string", "description": "Fitxer .gh lliurat"},
+        "formula": {"type": ["string", "null"], "description": "Fitxer amb la fórmula escrita un sol cop (per generar la versió de Rhino i la del visor)"},
+        "sortida_actual": {"enum": ["malla", "nurbs", "mixta"]},
+        "sliders": {"type": "array", "items": {"$ref": "#/$defs/slider"}},
+        "etiquetes": {"$ref": "#/$defs/etiquetes"},
+        "estat": {"$ref": "#/$defs/estat"},
+        "validacio_fisica": {"$ref": "#/$defs/validacio_fisica"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["tipus", "id", "nom", "data", "carpeta", "descripcio", "definicio", "sliders", "estat", "validacio_fisica"],
+      "additionalProperties": false
+    },
+    "solucio": {
+      "type": "object",
+      "description": "Com s'aplica una textura (o qualsevol textura) a un tipus de geometria: el coneixement que es reutilitza",
+      "properties": {
+        "tipus": {"const": "solucio"},
+        "id": {"type": "string", "pattern": "^S[0-9]{3}_[a-z0-9_]+$"},
+        "nom": {"type": "string"},
+        "data": {"type": "string"},
+        "textures": {"type": "array", "items": {"type": "string"}, "description": "Ids de textures on s'ha fet servir; [] = val per a qualsevol"},
+        "geometria": {
+          "type": "object",
+          "properties": {
+            "tipus": {"$ref": "#/$defs/etiquetes/properties/tipus_geometria/items"},
+            "condicions": {"type": "string", "description": "Quan és aplicable (corbatura, mida de la zona, retalls...)"}
+          },
+          "required": ["tipus", "condicions"],
+          "additionalProperties": false
+        },
+        "mapeig": {"enum": ["uv_arc", "cilindric", "planar", "arap_regional", "lscm", "corba_guia", "propi"]},
+        "sortida": {"enum": ["malla", "nurbs_per_punts", "nurbs_per_cel_la", "x_t", "step"]},
+        "codi": {"type": "array", "items": {"type": "string"}, "description": "Fitxers reutilitzables (rutes relatives a l'arrel)"},
+        "resultats": {"type": "object", "description": "Mesures: distorsió, temps, pes del fitxer, desviació..."},
+        "problemes_i_solucions": {"type": "array", "items": {"type": "object", "properties": {"problema": {"type": "string"}, "solucio": {"type": "string"}}, "required": ["problema", "solucio"], "additionalProperties": false}},
+        "captures": {"type": "array", "items": {"type": "string"}},
+        "font": {"type": "array", "items": {"type": "string"}, "description": "D'on surt (informes, textures)"},
+        "estat": {"$ref": "#/$defs/estat"},
+        "validacio_fisica": {"$ref": "#/$defs/validacio_fisica"}
+      },
+      "required": ["tipus", "id", "nom", "data", "textures", "geometria", "mapeig", "problemes_i_solucions", "font", "estat", "validacio_fisica"],
+      "additionalProperties": false
+    },
+    "projecte": {
+      "type": "object",
+      "description": "Es guarda FORA del catàleg compartit (A3, E3)",
+      "properties": {
+        "tipus": {"const": "projecte"},
+        "id": {"type": "string"},
+        "nom": {"type": "string"},
+        "data": {"type": "string"},
+        "model_entrada": {"type": "string", "description": "STEP de SolidWorks"},
+        "cares": {"type": "array", "items": {"type": "object", "properties": {"index": {"type": "integer"}, "color": {"type": ["string", "null"]}}, "required": ["index"], "additionalProperties": false}},
+        "textura": {"type": "string"},
+        "variant": {"type": "object", "description": "Valors dels sliders d'aquest projecte"},
+        "solucio": {"type": "string"},
+        "fabricacio": {"type": "object", "description": "Procés, línia de partició, direcció i angle de desmotllament..."},
+        "sortida": {"type": "string", "description": "Fitxer .x_t generat"},
+        "estat": {"$ref": "#/$defs/estat"},
+        "validacio_fisica": {"$ref": "#/$defs/validacio_fisica"}
+      },
+      "required": ["tipus", "id", "nom", "data", "model_entrada", "textura", "estat"],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {"$ref": "#/$defs/textura"},
+    {"$ref": "#/$defs/solucio"},
+    {"$ref": "#/$defs/projecte"}
+  ]
+}

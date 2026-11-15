@@ -1,0 +1,25 @@
+{
+  "tipus": "textura",
+  "id": "04_seient_colissos",
+  "nom": "Seient colissos",
+  "data": "2026-11-14",
+  "carpeta": "textures/04_seient_colissos",
+  "descripcio": "Peça superior d'un seient de bicicleta: closca prima amb finestra central en Y i ovals en relleu a portell, verticals a la zona central i inclinats a la vora; s'esvaeixen abans de les vores i del morro.",
+  "referencies": ["textures/04_seient_colissos/referencia/seient_planta.jpg", "textures/04_seient_colissos/referencia/seient_explosionat.jpg", "textures/04_seient_colissos/referencia/seient_detall_ovals.png"],
+  "definicio": "textures/04_seient_colissos/grasshopper/seient_colissos.gh",
+  "formula": null,
+  "sortida_actual": "malla",
+  "sliders": [
+    {"nom": "CW", "unitat": "mm", "defecte": 4.9, "min": null, "max": null, "explicacio": "Separació entre columnes d'ovals"},
+    {"nom": "CL", "unitat": "mm", "defecte": 17.6, "min": null, "max": null, "explicacio": "Pas al llarg de la columna"},
+    {"nom": "OVAL_W", "unitat": "mm", "defecte": 3.6, "min": null, "max": null, "explicacio": "Ample de l'oval"},
+    {"nom": "OVAL_L", "unitat": "mm", "defecte": 17.5, "min": null, "max": null, "explicacio": "Llargada de l'oval"},
+    {"nom": "HEIGHT", "unitat": "mm", "defecte": 0.8, "min": null, "max": null, "explicacio": "Alçada del relleu (negatiu = enfonsat); estimada"},
+    {"nom": "THICK", "unitat": "mm", "defecte": 2.5, "min": null, "max": null, "explicacio": "Gruix de la closca; estimat"},
+    {"nom": "DETAIL", "unitat": "mm", "defecte": 0.7, "min": null, "max": null, "explicacio": "Densitat de malla (0,7 ≈ 3 s; 0,5 ≈ 9 s)"}
+  ],
+  "etiquetes": {"tipus_geometria": ["closca"], "tipus_producte": ["seient de bicicleta"], "material": ["plàstic"], "acabat": ["mat"], "estil": ["orgànic", "tàctil"], "projecte": []},
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""},
+  "notes": ["Lliurada. Estat «pendent» fins que Pau l'aprovi passada a sòlid (F1).", "Llista de sliders resumida: el .gh en té 41 en 5 grups (vegeu el README de la textura)."]
+}

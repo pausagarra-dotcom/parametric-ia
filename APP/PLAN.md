@@ -77,6 +77,12 @@ SP-6, primera part, feta ([informe](recerca/sp6/informe.md)). Amb el camí (b), 
 
 SP-7 fet ([informe](recerca/sp7/informe.md)): **ARAP aplicat només a la zona a texturar** baixa la distorsió d'àrea a A25 / 100 mm del 16,2 % (uv_arc) al **5,0 %**, i a A40 del 32 % al 12 %. Serà el mètode per defecte per a superfícies orgàniques; per a plans i cilindres es fa servir el desplegament exacte.
 
+SP-8, parte 1 ([informe](recerca/sp8/informe.md)): enviar un script a Rhino con RhinoCode tarda ~0,5 s, pero **lo que limita es el cálculo**: cada cambio de slider de la textura 03 tarda ~3 s. Hacen falta definiciones pensadas para la app y una vista previa ligera. Parte 2: **ARAP con scipy tarda 1,1 s**. **Rhino.Inside no funciona** con Rhino 9 en este equipo, así que se propone un servidor pequeño dentro de Rhino. **Decisión: vista previa instantánea en el visor** (la fórmula se escribe una vez y una prueba comprueba que las dos versiones coinciden).
+SP-8, parte 3: **servidor dentro de Rhino**: el transporte tarda ~8 ms (ping de 5–10 ms) y cada cambio de slider 3,1 s. Se ha corregido un doble cálculo que lo hacía tardar 6 s. Sustituye a Rhino.Inside.
+SP-9, parte 2: **el ciclo del chat funciona** con Claude Code local y acciones MCP de la app (captura → Claude → `canviar_parametre`). Tarda 26 s (15 s de arranque) y tiene un coste estimado de 0,42 USD por mensaje (no se cobra con la suscripción). Con la API, antes hay que reducir el contexto.
+**Fase 0: catálogo hecho** ([APP/cataleg](cataleg/README.md)): esquema, fichas de las texturas 01–04, soluciones S001–S004 y comprobación automática.
+SP-9, parte 1 ([informe](recerca/sp9/informe.md)): Anthropic no permite ofrecer el login de claude.ai a otras personas en productos propios; con más usuarios hará falta **clave de API**. Recomendación: diseñar el chat con clave de API desde el principio y probar con la sesión local durante la beta.
+
 Porta 1: un informe per spike a `APP/recerca/spN/informe.md` i la decisió de què entra a l'MVP.
 
 ## 5. Fase 2 · Catàleg i eines dins de Rhino (encara sense app)

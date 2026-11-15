@@ -40,7 +40,7 @@ Com es fa:
 1. **Les textures lliurades no es modifiquen mai.** El que creix és el coneixement de *com s'aplica una textura a cada tipus de geometria* (cilindre, placa amb cantell arrodonit, NURBS orgànica…).
 2. **Entrada: només STEP**, de moment. L'equip modela a SolidWorks.
 3. **Tota la feina es fa a l'aplicació.** Rhino (i les definicions de Grasshopper) treballa en segon pla com a motor de càlcul. L'usuari no obre Rhino ni Grasshopper.
-4. **Un sol motor (Rhino)** per a la previsualització i per al model final. No hi haurà un visor web separat amb un càlcul propi.
+4. **Un sol motor (Rhino) per a la geometria final.** *Canvi del 2026-11-15:* per anar ràpid, el visor calcula a la targeta gràfica una **previsualització instantània** amb la mateixa fórmula mentre es mou el slider, i Rhino calcula la geometria bona en deixar-lo anar. La fórmula s'escriu un sol cop i una prova automàtica comprova que les dues versions donen el mateix (vegeu el SP-8).
 5. **El resultat final ha de ser geometria real per fabricar**, no només una previsualització.
 6. **Xat integrat a l'aplicació.** De moment només hi ha un usuari (Pau). Més endavant n'hi haurà més.
 7. **L'app també serveix per crear textures noves** (mode B), no només per aplicar les existents. Textura nova = carpeta nova; mai es modifica una de lliurada.

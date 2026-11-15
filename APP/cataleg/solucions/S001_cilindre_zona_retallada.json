@@ -1,0 +1,27 @@
+{
+  "tipus": "solucio",
+  "id": "S001_cilindre_zona_retallada",
+  "nom": "Patró de cel·les sobre una zona retallada d'un cilindre (sortida per a SolidWorks)",
+  "data": "2026-11-14",
+  "textures": ["02_placa_quadres"],
+  "geometria": {"tipus": "cilindre", "condicions": "Cara cilíndrica exacta (Rhino la reconeix amb TryGetCylinder), retallada amb un contorn qualsevol i pintada d'un color a SolidWorks."},
+  "mapeig": "cilindric",
+  "sortida": "x_t",
+  "codi": [],
+  "resultats": {
+    "distorsio_mapeig": "0 % (desplegament exacte del cilindre, SP-1)",
+    "solid": "tancat i vàlid, 5 cares",
+    "camí_b_nurbs_per_punts": {"pes_x_t_MB": 18.5, "pes_step_MB": 24.8, "desviacio_max_mm": 0.015, "valoracio": "no acceptable (estètica i pes)"}
+  },
+  "problemes_i_solucions": [
+    {"problema": "SolidWorks 2020 no acaba d'importar el STEP de sortida.", "solucio": "Exportar en Parasolid (.x_t): SolidWorks l'obre."},
+    {"problema": "Una sola superfície NURBS per punts fa ondulacions i pesa 25 MB.", "solucio": "Construir cada cel·la com a NURBS net (camí a) i repetir-la; al cilindre totes les cel·les són iguals (rotació + translació)."},
+    {"problema": "Amb un esvaïment curt, les cel·les del contorn queden com a falques.", "solucio": "Per defecte (2026-11-15): cel·les senceres esvaïdes per cel·la (cada cop menys fondes cap a la vora, sense deformar-se), com l'esvaïment de les textures 01–04. Alternativa: només cel·les senceres amb marge llis. Pau ho pot canviar."},
+    {"problema": "La zona no és un nombre sencer de cel·les i sobren mitges columnes.", "solucio": "Ajustar la mida de cel·la perquè hi càpiga un nombre sencer i centrar el tauler."},
+    {"problema": "Trobar la cara a texturar dins del STEP.", "solucio": "El color de cara de SolidWorks arriba a Rhino (BrepFace.PerFaceColor)."}
+  ],
+  "captures": ["APP/recerca/sp6/sp6_solid_Arctic.png", "APP/recerca/sp6/sp6_detall_Arctic.png"],
+  "font": ["APP/recerca/sp5/informe.md", "APP/recerca/sp6/informe.md"],
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""}
+}

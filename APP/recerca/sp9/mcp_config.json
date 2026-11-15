@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "app": {
+      "type": "stdio",
+      "command": "C:\\dev\\venvs\\textura\\Scripts\\python.exe",
+      "args": ["-I", "H:\\Mi unidad\\PARAMETRIC IA_New_shot\\APP\\recerca\\sp9\\app_mcp.py"]
+    }
+  }
+}

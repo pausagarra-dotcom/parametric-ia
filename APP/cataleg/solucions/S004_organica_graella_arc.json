@@ -1,0 +1,20 @@
+{
+  "tipus": "solucio",
+  "id": "S004_organica_graella_arc",
+  "nom": "Patró de cel·les sobre NURBS orgànica amb graella per longitud d'arc (Grasshopper)",
+  "data": "2026-11-14",
+  "textures": ["03_organica_quadres"],
+  "geometria": {"tipus": "organica", "condicions": "NURBS orgànica suau (provada amb 200 × 200 mm, malla de control 7 × 7). Per a corbatura alta, millor S002 (ARAP)."},
+  "mapeig": "uv_arc",
+  "sortida": "malla",
+  "codi": ["textures/03_organica_quadres/scripts/gh_org_rejilla.py", "textures/03_organica_quadres/scripts/gh_org_malla.py", "textures/03_organica_quadres/scripts/build_gh_organica.py"],
+  "resultats": {"recalcul_complet_s": 3, "slider_de_patro_s": 1.7},
+  "problemes_i_solucions": [
+    {"problema": "Els nodes Evaluate natius costen ~30 µs per element: 18 s de recàlcul.", "solucio": "Avaluar la fórmula una sola vegada per cada coordenada local diferent (~60) i repartir-la per cel·les; l'esvaïment és separable en x i y. De 18 s a ~3 s."},
+    {"problema": "Canviar un slider per codi i després cridar NewSolution resolia dues vegades (SP-8).", "solucio": "Desactivar el document mentre es canvia el valor i resoldre una sola vegada."}
+  ],
+  "captures": [],
+  "font": ["textures/03_organica_quadres/README.md", "textures/03_organica_quadres/formula_patro.md", "APP/recerca/sp8/informe.md"],
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""}
+}

@@ -1,0 +1,28 @@
+{
+  "tipus": "textura",
+  "id": "02_placa_quadres",
+  "nom": "Placa de quadrats",
+  "data": "2026-11-13",
+  "carpeta": "textures/02_placa_quadres",
+  "descripcio": "Quadrats enfonsats en tauler d'escacs sobre una placa plana amb cantell arrodonit; fons parabòlic suau, arestes marcades a dalt-dreta i baix-esquerra; s'esvaeixen abans del cantell.",
+  "referencies": ["textures/02_placa_quadres/referencia/test_02.jpg", "textures/02_placa_quadres/referencia/test_02_detail.JPG"],
+  "definicio": "textures/02_placa_quadres/grasshopper/placa_quadres.gh",
+  "formula": "textures/03_organica_quadres/formula_patro.md",
+  "sortida_actual": "malla",
+  "sliders": [
+    {"nom": "CELL", "unitat": "mm", "defecte": 8.0, "min": null, "max": null, "explicacio": "Costat de la cel·la (pas del tauler)"},
+    {"nom": "GAP", "unitat": "mm", "defecte": 0.2, "min": null, "max": null, "explicacio": "Marge pla al voltant de cada quadrat"},
+    {"nom": "CORNER_R", "unitat": "mm", "defecte": 1.2, "min": null, "max": null, "explicacio": "Radi de les cantonades del quadrat"},
+    {"nom": "WALL", "unitat": "mm", "defecte": 0.2, "min": null, "max": null, "explicacio": "Ample de l'aresta (0,2 = tall net)"},
+    {"nom": "DEPTH", "unitat": "mm", "defecte": 0.4, "min": null, "max": null, "explicacio": "Profunditat màxima (Pau la vol a 0,4 per defecte)"},
+    {"nom": "TILT", "unitat": "", "defecte": 0.8, "min": null, "max": null, "explicacio": "Inclinació del fons cap a la cantonada marcada"},
+    {"nom": "LIP", "unitat": "", "defecte": 0.3, "min": null, "max": null, "explicacio": "Força de l'aresta marcada"},
+    {"nom": "PATTERN", "unitat": "index", "defecte": 0, "min": 0, "max": 1, "explicacio": "0 = tauler d'escacs, 1 = totes les cel·les"},
+    {"nom": "FADE_GAP", "unitat": "mm", "defecte": null, "min": null, "max": null, "explicacio": "On comença l'esvaïment cap al cantell"},
+    {"nom": "FADE_LEN", "unitat": "mm", "defecte": null, "min": null, "max": null, "explicacio": "Llargada de l'esvaïment"}
+  ],
+  "etiquetes": {"tipus_geometria": ["placa_cantell_arrodonit", "pla"], "tipus_producte": [], "material": ["plàstic"], "acabat": ["mat"], "estil": ["geomètric", "tàctil"], "projecte": []},
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""},
+  "notes": ["Lliurada. Estat «pendent» fins que Pau l'aprovi passada a sòlid (F1).", "Al SP-6 es va aplicar la seva fórmula sobre un cilindre (solució S001)."]
+}

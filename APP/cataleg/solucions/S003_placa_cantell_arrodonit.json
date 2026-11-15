@@ -1,0 +1,21 @@
+{
+  "tipus": "solucio",
+  "id": "S003_placa_cantell_arrodonit",
+  "nom": "Cel·les enfonsades sobre placa plana amb cantell arrodonit",
+  "data": "2026-11-14",
+  "textures": ["02_placa_quadres"],
+  "geometria": {"tipus": "placa_cantell_arrodonit", "condicions": "Placa plana amb cantonades i cantell arrodonits; el patró s'esvaeix abans del cantell."},
+  "mapeig": "planar",
+  "sortida": "malla",
+  "codi": ["textures/02_placa_quadres/scripts/gh_placa.py", "textures/02_placa_quadres/scripts/build_gh_placa.py"],
+  "resultats": {},
+  "problemes_i_solucions": [
+    {"problema": "Bandes de llum dins dels quadrats (les línies blaves), segons la il·luminació de cada equip.", "solucio": "Són salts de corbatura: fer servir fons polinòmics al ras del contorn (sense abs/min/smoothstep a dins) i comprovar ombrejant la malla real amb 4 llums."},
+    {"problema": "Pics d'ombrejat a prop del cantell arrodonit.", "solucio": "Aturar la graella abans de l'arrodoniment i continuar amb anells cap enfora seguint la normal de la distància al contorn."},
+    {"problema": "Primera versió amb totes les cel·les enfonsades quan la referència era un tauler d'escacs.", "solucio": "Llegir la referència a fons abans de modelar (retall, ampliació, CLAHE) i mesurar perfils de llum."}
+  ],
+  "captures": ["textures/02_placa_quadres/captures/compare_final.png"],
+  "font": ["textures/02_placa_quadres/README.md"],
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""}
+}
