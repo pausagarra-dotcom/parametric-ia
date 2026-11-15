@@ -75,6 +75,8 @@ Ordre: **SP-5 i SP-6 primer**, perquè la sortida a SolidWorks és el risc més 
 **Estat (2026-11-14):** SP-5 fet ([informe](recerca/sp5/informe.md)). El STEP conserva les particions, el color de cara i els mm. Rhino 9 **no importa** `.x_t`, però sí que l'**exporta**: al SP-6 es prova també com a format de sortida.
 SP-6, primera part, feta ([informe](recerca/sp6/informe.md)). Amb el camí (b), una superfície per punts, el sòlid queda tancat i vàlid, però el fitxer pesa massa: 25 MB en STEP i 18,5 MB en `.x_t` per a una zona de 33 × 86 mm, amb una desviació màxima de 0,015 mm. **Decisió (Pau, 2026-11-14): la sortida és Parasolid (`.x_t`)**: SW2020 l'obre, mentre que el STEP no l'acaba d'importar. El format queda resolt. El que falta és la **qualitat de la geometria**: la superfície del camí (b) no és estètica (falques al contorn, ondulacions). El camí (a), NURBS net per quadrat amb el tauler ajustat a la zona, passa a la fase 2 com a manera estàndard de generar la sortida.
 
+SP-7 fet ([informe](recerca/sp7/informe.md)): **ARAP aplicat només a la zona a texturar** baixa la distorsió d'àrea a A25 / 100 mm del 16,2 % (uv_arc) al **5,0 %**, i a A40 del 32 % al 12 %. Serà el mètode per defecte per a superfícies orgàniques; per a plans i cilindres es fa servir el desplegament exacte.
+
 Porta 1: un informe per spike a `APP/recerca/spN/informe.md` i la decisió de què entra a l'MVP.
 
 ## 5. Fase 2 · Catàleg i eines dins de Rhino (encara sense app)
