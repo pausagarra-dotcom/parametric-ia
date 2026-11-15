@@ -1,0 +1,36 @@
+{
+  "tipus": "textura",
+  "id": "05_funda_rombos_nurbs",
+  "nom": "Funda de rombes en NURBS",
+  "data": "2026-11-15",
+  "carpeta": "textures/05_funda_rombos_nurbs",
+  "descripcio": "Versió NURBS de la 01: rombes enfonsats de fons arrodonit que s'esvaeixen, un pegat Bezier per rombe, sòlid vàlid per a SolidWorks. Dues variants: funda de mòbil i cilindre.",
+  "referencies": ["textures/05_funda_rombos_nurbs/referencia/test_01.JPG"],
+  "definicio": "textures/05_funda_rombos_nurbs/grasshopper/funda_rombos_nurbs.gh",
+  "formula": null,
+  "sortida_actual": "nurbs",
+  "sliders": [
+    {"nom": "CELL_W", "unitat": "mm", "defecte": 6.063, "min": 2, "max": 15, "explicacio": "Diagonal horitzontal del rombe (funda; 5,52 al cilindre, ajustat a un nombre enter al voltant)"},
+    {"nom": "CELL_H", "unitat": "mm", "defecte": 9.11, "min": 3, "max": 25, "explicacio": "Diagonal vertical del rombe"},
+    {"nom": "DEPTH", "unitat": "mm", "defecte": 0.5, "min": 0, "max": 2, "explicacio": "Enfonsament màxim del rombe"},
+    {"nom": "SUAVIDAD", "unitat": "", "defecte": 1, "min": 0, "max": 1, "explicacio": "1 = fons arrodonit llis; 0 = s'acosta a la piràmide de la 01"},
+    {"nom": "GRADO", "unitat": "index", "defecte": 6, "min": 2, "max": 9, "explicacio": "Grau del pegat Bezier de cada rombe"},
+    {"nom": "GAP", "unitat": "mm", "defecte": 0.5, "min": 0, "max": 2, "explicacio": "Amplada de la franja plana entre rombes (0 = rombes enganxats, aresta viva)"},
+    {"nom": "TX_A", "unitat": "mm", "defecte": 27.5, "min": 5, "max": 37, "explicacio": "Semiamplada de la zona texturada (funda)"},
+    {"nom": "TX_B", "unitat": "mm", "defecte": 55, "min": 10, "max": 80, "explicacio": "Semialçada de la zona texturada (45 al cilindre)"},
+    {"nom": "TX_CY", "unitat": "mm", "defecte": 58, "min": 10, "max": 110, "explicacio": "Centre Y de la zona texturada (funda)"},
+    {"nom": "FADE_IN", "unitat": "", "defecte": 0, "min": 0, "max": 0.95, "explicacio": "On comença l'esvaïment (0,3 al cilindre)"},
+    {"nom": "FADE_N", "unitat": "", "defecte": 2.018, "min": 2, "max": 8, "explicacio": "Forma de la zona: 2 = el·lipse, 8 = gairebé rectangle (4 al cilindre)"},
+    {"nom": "FADE_MODE", "unitat": "index", "defecte": 0, "min": 0, "max": 3, "explicacio": "Corba d'esvaïment: 0 suau, 1 cosinus, 2 lineal, 3 abrupte-suau"},
+    {"nom": "MIN_D", "unitat": "mm", "defecte": 0.002, "min": 0, "max": 0.05, "explicacio": "Els rombes amb menys enfonsament queden plans"}
+  ],
+  "etiquetes": {"tipus_geometria": ["closca", "cilindre"], "tipus_producte": ["funda de mòbil"], "material": ["plàstic"], "acabat": ["mat"], "estil": ["geomètric"], "projecte": []},
+  "estat": "pendent",
+  "validacio_fisica": {"feta": false, "tecnologia": null, "data": null, "notes": ""},
+  "notes": [
+    "Feta perquè la 01 (malla) no es pot passar bé a SolidWorks: aquí la geometria es construeix directament en NURBS.",
+    "Amb GAP 0,5: funda de 205 cares i .x_t de 1,62 MB; cilindre de 833 cares i .x_t de 7,61 MB. Sòlids vàlids a Rhino; STEP rellegit com a sòlid.",
+    "Pendent d'obrir a SolidWorks 2020 (Pau).",
+    "Sliders de la funda (PH_*, CAM_*, EDGE_R) i del cilindre (CYL_*, ZONES, PHASE, ZONE_HALF, TX_CZ): vegeu el README de la textura."
+  ]
+}

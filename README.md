@@ -12,7 +12,8 @@ A partir d'una foto de referència es crea una textura paramètrica (Grasshopper
 │  ├─ 01_funda_rombos/
 │  ├─ 02_placa_quadres/
 │  ├─ 03_organica_quadres/
-│  └─ 04_seient_colissos/
+│  ├─ 04_seient_colissos/
+│  └─ 05_funda_rombos_nurbs/   la 01 en NURBS (sòlid per a SolidWorks)
 ├─ recerca/             spikes de validació (SP-0 bucle Rhino, SP-1 mapeig, SP-4 relleu), amb informe.md
 └─ historial/           una nota per commit, amb la data al nom (AAAA-MM-DD_NN_descripcio.md)
 ```
